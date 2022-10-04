@@ -1,0 +1,6 @@
+- CodeIgniter-3.1.13 (Current version)
+- codigniter3-language-indonesia
+- Midtrans-Codeigniter-master
+- mpdf
+- spout-master
+- stisla-1-2.2.0
