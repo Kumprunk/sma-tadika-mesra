@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="footer-left">
-        Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> <a href="https://bit.ly/3cI5GxN" target="_blank">Bisa Jadi</a>
+        Copyright &copy; <?= date('Y'); ?> <div class="bullet"></div> <a href="https://bit.ly/3fCSPhG target="_blank">Kelompok 3</a>
     </div>
     <div class="footer-right">
         v.1.1.0
