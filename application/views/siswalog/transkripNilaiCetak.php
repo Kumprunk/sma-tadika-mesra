@@ -114,8 +114,8 @@
             <tr>
                 <td width="67%"> </td>
                 <td style="text-align: left;">
-                    Ketapang, <?= strftime('%d %B %Y'); ?><br>
-                    Kepala Sekolah SMA Ma'Arif
+                    Purwokerto, <?= strftime('%d %B %Y'); ?><br>
+                    Kepala Sekolah SMA Negeri Tadika Mesra
                 </td>
                 <br><br>
             </tr>
@@ -128,7 +128,7 @@
                 <td style="text-align: left;">
                     <u><?= $general['nama_kepsek']; ?></u>
                     <br>
-                    NIP. <?= $general['nip_kepsek']; ?>
+                    NIDN. <?= $general['nip_kepsek']; ?>
                 </td>
                 <br>
             </tr>

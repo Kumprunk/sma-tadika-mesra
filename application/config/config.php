@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 date_default_timezone_set("Asia/Jakarta");
 
-$config['base_url'] = 'http://localhost/sma-maarif-v11/';
+$config['base_url'] = 'http://localhost/sma-tadika-mesra/';
 
 $config['index_page'] = '';
 

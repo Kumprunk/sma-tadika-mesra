@@ -22,4 +22,9 @@ class Guru extends CI_Controller
         $this->load->view('guru/data_guru', $data);
         $this->load->view('temp/footer', $data);
     }
+
+    public function guruAdd()
+    {
+        
+    }
 }

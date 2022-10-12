@@ -15,7 +15,7 @@
             <?php if ($userLog['email'] == NULL) : ?>
                 Email belum terdaftar! satu langkah lagi untuk melengkapi data akun Anda <a href="<?= base_url('userlog/akunProfil'); ?>">disini</a>.
             <?php else : ?>
-                App Web adalah sistem yang memungkinkan para citivas akademik untuk menerima informasi dengan lebih cepat melalui Internet. Sistem ini diharapkan dapat memberi kemudahan setipa citivas akademika untuk melakukan aktivitas-aktivitas akademik dan proses belajar mengajar. Selamat menggunakan fasilitas ini.
+                Web App adalah sistem yang memungkinkan para aktifitas akademik untuk menerima informasi dengan lebih cepat melalui Internet. Sistem ini diharapkan dapat memberi kemudahan setipa citivas akademika untuk melakukan aktivitas-aktivitas akademik dan proses belajar mengajar. Selamat menggunakan fasilitas ini.
             <?php endif; ?>
         </p>
 
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-12 col-sm-12">
                     <div class="card shadow">
                         <div class="card-header">
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         <?php elseif ($userLog['role_id'] == 2) : ?>
             <div class="row">
@@ -190,7 +190,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-12 col-sm-12">
                     <div class="card shadow">
                         <div class="card-header">
@@ -229,21 +229,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         <?php elseif ($userLog['role_id'] == 3) : ?>
             <div class="section-body">
                 <div class="card shadow">
                     <div class="card-header">
-                        <h4>Example Card</h4>
+                        <h4>Selamat Datang Di Tadika Mesra</h4>
                     </div>
                     <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Sebagai lembaga pendidikan, SMA Negeri Tadika Mesra tanggap dengan perkembangan teknologi tersebut. 
+                        Dengan dukungan SDM yang di miliki sekolah ini siap untuk berkompetisi dengan sekolah lain dalam 
+                        pelayanan informasi publik. Teknologi Informasi Web khususnya, menjadi sarana bagi SMA Negeri Tadika Mesra 
+                        untuk memberi pelayanan informasi secara cepat, jelas, dan akurat. Dari layanan ini pula, sekolah siap 
+                        memberikan para siswa untuk menggunakan teknologi sejak dini.
+                        </p>
                     </div>
                     <div class="card-footer bg-whitesmoke"></div>
                 </div>

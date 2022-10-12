@@ -17,7 +17,7 @@
 
             <div class="card shadow">
                 <div class="card-header">
-                    <a href="#your-link" class="btn btn-outline-primary fas fa-user-plus mr-1" title="tambah"></a>
+                    <a href="<?= base_url("guru/guruAdd")?>" class="btn btn-outline-primary fas fa-user-plus mr-1" title="tambah"></a>
                     <a href="#your-link" class="btn btn-outline-primary fas fa-print mr-1" title="cetak"></a>
                 </div>
                 <div class="card-body">

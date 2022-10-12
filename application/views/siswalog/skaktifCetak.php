@@ -43,7 +43,7 @@
 
 
         <!-- Main Content Start -->
-        <p>Yang bertanda tangan dibawah ini Kepala Sekolah <b>SMA MA'ARIF KETAPANG</b> menerangkan bahwa siswa berikut ini:</p>
+        <p>Yang bertanda tangan dibawah ini Kepala Sekolah <b>SMA NEGERI TADIKA MESRA</b> menerangkan bahwa siswa berikut ini:</p>
         <table style="border-collapse: collapse; font-size: 10pt; padding: 5px; width: 200mm;">
             <tr>
                 <td width="22%">Nama Lengkap</td>
@@ -115,7 +115,7 @@
             <tr>
                 <td width="67%"> </td>
                 <td style="text-align: left;">
-                    Ketapang, <?= strftime('%d %B %Y'); ?><br>
+                    Purwokerto, <?= strftime('%d %B %Y'); ?><br>
                     Kepala Sekolah SMA Ma'Arif
                 </td>
                 <br><br>

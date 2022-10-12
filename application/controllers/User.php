@@ -30,6 +30,7 @@ class User extends CI_Controller
         $data['user'] = $this->Muser->user($username)->row_array();
         $data['l_role'] = $this->db->get('u_role')->result_array();
         $data['l_active'] = $this->db->get('u_active')->result_array();
+        
 
         $this->form_validation->set_rules('role_id', 'role akses', 'trim|required');
         $this->form_validation->set_rules('active_id', 'status akun', 'trim|required');
@@ -50,7 +51,7 @@ class User extends CI_Controller
             $this->db->where('username', $username);
             $this->db->update('u_user', $dataUpdate);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">perubahan berhasil disimpan.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-            redirect('user/userProfil/' . $username);
+            //redirect('user/userProfil/' . $username);
         }
     }
 

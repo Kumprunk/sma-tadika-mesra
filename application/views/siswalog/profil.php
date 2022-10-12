@@ -13,7 +13,7 @@
 
         <div class="section-body">
             <h2 class="section-title">Keterangan !</h2>
-            <p class="section-lead">Profil Siswa berisi data pribadi pengguna SmartSchool. Apabila terdapat kesalahan data, anda dapat menghubungi pihak sekolah untuk memperbaikinya.</p>
+            <p class="section-lead">Profil Siswa berisi data pribadi pengguna SmartSchool. Apabila terdapat kesalahan data, anda dapat menghubungi pihak sekolah untuk memperbaikinya. Dan kami berharap agar siswa tidak mengubah foto profil menjadi foto profil anime</p>
 
             <div class="card mb-3">
                 <?= $this->session->flashdata('pesan'); ?>
