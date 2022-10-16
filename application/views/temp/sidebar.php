@@ -72,16 +72,16 @@
             <?php elseif ($userLog['role_id'] == 4) : ?>
                 <li class="menu-header">Dashboard</li>
                 <li><a class="nav-link" href="<?= base_url('dashboard/index'); ?>"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-                <li class="menu-header">Siswa</li>
-                <li><a class="nav-link" href="<?= base_url('siswalog/profil'); ?>"><i class="fas fa-user-graduate"></i> <span>Profil</span></a></li>
+                <li class="menu-header">Guru</li>
+                <li><a class="nav-link" href="<?= base_url('gurulog/profil'); ?>"><i class="fas fa-user-graduate"></i> <span>Profil Guru</span></a></li>
                 <li><a class="nav-link" href="<?= base_url('siswalog/biodata'); ?>"><i class="fas fa-receipt"></i> <span>Biodata</span></a></li>
-                <li><a class="nav-link" href="<?= base_url('siswalog/orangtua'); ?>"><i class="fas fa-receipt"></i> <span>Data Orang Tua</span></a></li>
+                <!-- <li><a class="nav-link" href="<?= base_url('siswalog/orangtua'); ?>"><i class="fas fa-receipt"></i> <span>Data Orang Tua</span></a></li>
                 <li><a class="nav-link" href="<?= base_url('siswalog/transkripnilai'); ?>"><i class="fas fa-list"></i> <span>Transkrip Nilai</span></a></li>
-                <!-- <li><a class="nav-link" href="<?= base_url('siswalog/tagihan'); ?>"><i class="fas fa-hand-holding-usd"></i> <span>Tagihan SPP</span></a></li> -->
+                 -->
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Cetak</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="<?= base_url('siswalog/skaktifCetak'); ?>" target="_blank">Surat Keterangan Aktif</a></li>
+                        <li><a class="nav-link" href="<?= base_url('gurulog/skaktifCetak'); ?>" target="_blank">Surat Keterangan Aktif</a></li>
                     </ul>
                 </li>
                 <li class="menu-header">Pengaturan Akun</li>

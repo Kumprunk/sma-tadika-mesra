@@ -21,5 +21,6 @@ $autoload['model'] = array(
     'Muser',
     'Muserlog',
     'Mguru',
-    'Mtagihan'
+    'Mtagihan',
+    'Mgurulog'
 );
