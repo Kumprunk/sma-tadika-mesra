@@ -91,6 +91,30 @@
                                     <?= form_error('kd_kelas', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Mengajar Mata Pelajaran <span class="text-danger" data-toggle="tooltip" data-placement="right" title="wajib diisi.">*</span></label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" required name="mapel">
+                                        <option selected disabled value="">-- pilih --</option>
+                                        <?php foreach ($guru_mapel as $r) : ?>
+                                            <option value="<?= $r['kd_mapel']; ?>" <?= set_select('mapel', $r['mapel']); ?>><?= $r['mapel']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <?= form_error('kd_kelas', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Mengajar Kelas <span class="text-danger" data-toggle="tooltip" data-placement="right" title="wajib diisi.">*</span></label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" required name="kelas">
+                                        <option selected disabled value="">-- pilih --</option>
+                                        <?php foreach ($guru_kelas as $r) : ?>
+                                            <option value="<?= $r['kd_kelas']; ?>" <?= set_select('kelas', $r['kelas']); ?>><?= $r['kelas']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <?= form_error('kd_kelas', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                            </div>
                         </div>
                         <hr>
                         <button type="submit" class="btn btn-primary btn-block">Simpan</button>

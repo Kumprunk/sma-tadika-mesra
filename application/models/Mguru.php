@@ -13,4 +13,15 @@ class Mguru extends CI_Model
                 ";
         return $this->db->query($query);
     }
+
+    function guru($nip)
+    {
+        $query = "SELECT c_guru.*, c_status.*, c_golongan.*,b_kelas.*
+                    FROM c_guru
+                    JOIN c_status ON c_guru.status_id = c_status.id
+                    JOIN c_golongan ON c_guru.golongan_id = c_golongan.id
+                    JOIN b_kelas ON c_guru.guru_kelas = b_kelas.kd_kelas 
+                    WHERE nip = $nip";
+        return $this->db->query($query);
+    }
 }

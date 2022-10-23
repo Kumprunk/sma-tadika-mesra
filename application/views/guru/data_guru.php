@@ -45,7 +45,7 @@
                                             <li class="media">
                                                 <img class="mr-3 rounded-circle" width="50" src="<?= base_url('assets/img/guru/' . $guru['foto']); ?>" alt="img">
                                                 <div class="media-body">
-                                                    <h6 class="media-title"><a href="#" style="text-transform: uppercase;"><?= $guru['nama']; ?></a></h6>
+                                                    <h6 class="media-title"><a href="<?= base_url('guru/profil_guru/'. $guru['nip'])?>" style="text-transform: uppercase;"><?= $guru['nama']; ?></a></h6>
                                                     <div class="text-small text-muted">NIP. <?= $guru['nip']; ?></div>
                                                 </div>
                                             </li>
