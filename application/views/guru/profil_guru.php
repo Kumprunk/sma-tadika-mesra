@@ -31,16 +31,16 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tempat, Tgl Lahir</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" readonly style="text-transform: uppercase;" value="<?= $guru['tmp_lhr']; ?>, <?= strftime('%d %B %Y', strtotime($guru['tgl_lhr'])); ?>">
+                            <input type="text" class="form-control" readonly style="text-transform: uppercase;" value="<?= $guru['tmp_lahir']; ?>, <?= strftime('%d %B %Y', strtotime($guru['tgl_lahir'])); ?>">
                         </div>
-                    </div> -->
+                    </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Kelas / Jurusan</label>
+                        <label class="col-sm-2 col-form-label">Kelas / Matkul</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" readonly style="text-transform: uppercase;" value="<?= $guru['kelas']; ?>">
+                            <input type="text" class="form-control" readonly style="text-transform: uppercase;" value="<?= $guru['kelas']; ?>, <?= $guru['mapel']?>">
                         </div>
                     </div>
                     <div class="form-group row">

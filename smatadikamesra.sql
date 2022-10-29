@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 12:34 PM
+-- Generation Time: Oct 29, 2022 at 09:57 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -100,6 +100,7 @@ CREATE TABLE `b_nilai` (
   `nis` varchar(16) NOT NULL,
   `kd_mapel` varchar(30) NOT NULL,
   `kd_semester` varchar(20) NOT NULL,
+  `tugas` int(11) NOT NULL,
   `uts` int(11) NOT NULL,
   `uas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -108,10 +109,37 @@ CREATE TABLE `b_nilai` (
 -- Dumping data for table `b_nilai`
 --
 
-INSERT INTO `b_nilai` (`id`, `nis`, `kd_mapel`, `kd_semester`, `uts`, `uas`) VALUES
-(1, '123450', 'BING3', 'SMT-3', 45, 78),
-(2, '123450', 'BI1', 'SMT-1', 45, 45),
-(3, '123450', 'BING2', 'SMT-2', 45, 78);
+INSERT INTO `b_nilai` (`id`, `nis`, `kd_mapel`, `kd_semester`, `tugas`, `uts`, `uas`) VALUES
+(1, '123450', 'BING3', 'SMT-3', 0, 45, 78),
+(2, '123450', 'BI1', 'SMT-1', 0, 45, 45),
+(3, '123450', 'BING2', 'SMT-2', 0, 45, 78);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `b_nilai_tugas`
+--
+
+CREATE TABLE `b_nilai_tugas` (
+  `id` int(11) NOT NULL,
+  `nis` varchar(16) NOT NULL,
+  `kd_mapel` varchar(16) NOT NULL,
+  `kd_semester` varchar(16) NOT NULL,
+  `tugas_1` int(11) NOT NULL,
+  `tugas_2` int(11) NOT NULL,
+  `tugas_3` int(11) NOT NULL,
+  `tugas_4` int(11) NOT NULL,
+  `tugas_5` int(11) NOT NULL,
+  `tugas` int(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `b_nilai_tugas`
+--
+
+INSERT INTO `b_nilai_tugas` (`id`, `nis`, `kd_mapel`, `kd_semester`, `tugas_1`, `tugas_2`, `tugas_3`, `tugas_4`, `tugas_5`, `tugas`) VALUES
+(1, '123452', 'BI1', 'SMT-1', 80, 0, 0, 0, 0, 0),
+(4, '123450', 'BING3', 'SMT-6', 80, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -408,6 +436,7 @@ CREATE TABLE `c_guru` (
   `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nip` varchar(50) NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `jk` enum('L','P') NOT NULL,
   `telp` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -426,6 +455,7 @@ CREATE TABLE `c_guru` (
   `prov` varchar(50) NOT NULL,
   `negara` varchar(50) NOT NULL,
   `kodepos` int(5) NOT NULL,
+  `tgl_daftar` date DEFAULT NULL,
   `foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -433,12 +463,15 @@ CREATE TABLE `c_guru` (
 -- Dumping data for table `c_guru`
 --
 
-INSERT INTO `c_guru` (`id`, `nama`, `nip`, `jk`, `telp`, `email`, `status_id`, `golongan_id`, `guru_kelas`, `guru_mapel`, `tmp_lahir`, `tgl_lahir`, `golda`, `agama`, `alamat`, `kel`, `kec`, `kab`, `prov`, `negara`, `kodepos`, `foto`) VALUES
-(5, 'Meli Arliyah S.Pd', '1982736490', 'P', '089827167197', 'meli@gmail.com', 1, 4, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, 'default.png'),
-(6, 'Mesi Fitri Ninggsih S.Pd', '8263719837495', 'P', '086384659176', 'mesi@gmail.com', 3, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, 'default.png'),
-(7, 'Joko Anwar', '', 'L', '08647198374', 'joko@gmail.com', 2, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, 'default.png'),
-(8, 'Gilbas', '', 'L', '087364981729', 'gilbas', 2, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, 'default.png'),
-(11, 'DRH HENDRIYATNO KRISHNA NUGROHO', '12345671', 'L', '0895328580761', 'arbangun@gmail.com', 2, 13, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, 'default.png');
+INSERT INTO `c_guru` (`id`, `nama`, `nip`, `nik`, `jk`, `telp`, `email`, `status_id`, `golongan_id`, `guru_kelas`, `guru_mapel`, `tmp_lahir`, `tgl_lahir`, `golda`, `agama`, `alamat`, `kel`, `kec`, `kab`, `prov`, `negara`, `kodepos`, `tgl_daftar`, `foto`) VALUES
+(5, 'Meli Arliyah S.Pd', '1982736490', '-', 'P', '089827167197', 'meli@gmail.com', 1, 4, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, NULL, 'default.png'),
+(6, 'Mesi Fitri Ninggsih S.Pd', '8263719837495', '-', 'P', '086384659176', 'mesi@gmail.com', 3, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, NULL, 'default.png'),
+(7, 'Joko Anwar', '', '-', 'L', '08647198374', 'joko@gmail.com', 2, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, NULL, 'default.png'),
+(8, 'Gilbas', '', '-', 'L', '087364981729', 'gilbas', 2, 0, 'KLS-1', 'BI2', '', NULL, '', '', '', '', '', '', '', '', 0, NULL, 'default.png'),
+(11, 'DRH HENDRIYATNO KRISHNA NUGROHO', '12345671', '3303030303030305', 'L', '0895328580761', 'arbangun@gmail.com', 2, 13, 'KLS-1', 'BI2', 'Bobotsari', '2022-10-23', 'AB-', 'Islam', 'Karangduren', 'Karangduren', 'Bobotsari', 'Purbalingga', 'Jawa Tengah', 'Indonesia', 53353, NULL, 'default.png'),
+(12, 'Suti', '12345672', '-', 'P', '0895328580762', 'suti@gmail.com', 2, 4, 'KLS-3', 'BI3', 'Purbalingga', '2022-10-23', 'AB+', 'Islam', 'Purwokerto', 'Karangduren', 'Kuta Selatan', 'Denpasar', 'DKI Jakarta', 'Angola', 53353, '2022-10-24', 'default.png'),
+(13, 'PRASTOWO ADI', '12345673', '3303030303030303', 'L', '0895328580763', 'uki@gmail.com', 2, 3, 'KLS-2', 'MTK2', 'Bobotsari', '2022-10-21', 'O+', 'Islam', 'Purwokerto', 'Karangduren', 'Mengwi', 'Klungkung', 'Bengkulu', 'Angola', 53353, '2022-10-22', 'default.png'),
+(14, 'Arief Nursoleh', '12345674', '3303030303030304', 'L', '0895328580761', 'arief@gmail.com', 1, 13, 'KLS-3', 'BING3', 'Bobotsari', '2022-10-12', 'B+', 'Islam', 'Purwokerto', 'Karangduren', 'Kuta Selatan', 'Karangasem', 'Bangka Belitung', 'Andorra', 53353, '2022-10-21', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -8691,7 +8724,10 @@ INSERT INTO `u_user` (`id`, `username`, `nama`, `password`, `email`, `role_id`, 
 (17, 'admin3', 'Admin Tiga', '$2y$10$/vvYNvanJ6JcfNP5e6GuVu1TksfuOwg/oWwnrpQPrwqQoOxlVoGUC', '', 2, 1, '2022-09-27 07:48:21', '2022-09-27 07:48:21'),
 (18, '20541057', 'Arief Nursoleh', '$2y$10$wa03AmEa.tB.zhR3pJGfuOTamcgbUmyYtGkT0RB02jZNZcwClvFhq', 'trendykumprunk01@gmail.com', 3, 1, '2022-10-08 04:10:16', '2022-10-08 04:10:16'),
 (19, 'guru1', 'Arief Nursoleh', '$2y$10$29CwSH5weD1Nmiwk9fHv7ukME4i3ItAO4jdqg6jluetG6ynPQLIYG', 'guru1@gmail.com', 4, 1, '2022-10-13 02:02:57', '2022-10-13 02:02:57'),
-(24, '12345671', 'DRH HENDRIYATNO KRISHNA NUGROHO', '$2y$10$Qg0R1SeLS0dubHRejF8dnuQmhnm3H7VridmCdtoB59.2jS1Bh5zeq', 'arbangun@gmail.com', 4, 1, '2022-10-17 01:31:32', '2022-10-17 01:31:32');
+(24, '12345671', 'DRH HENDRIYATNO KRISHNA NUGROHO', '$2y$10$Qg0R1SeLS0dubHRejF8dnuQmhnm3H7VridmCdtoB59.2jS1Bh5zeq', 'arbangun@gmail.com', 4, 1, '2022-10-17 01:31:32', '2022-10-17 01:31:32'),
+(26, '12345672', 'Suti', '$2y$10$ykD7fDRO8n8IocJ88MYKBu7dBKd1DY1cTk30msddzBvUxTKKLRSAq', 'suti@gmail.com', 4, 1, '2022-10-24 01:21:31', '2022-10-24 01:21:31'),
+(27, '12345673', 'PRASTOWO ADI', '$2y$10$ZSMxYPsk.YsErpk7.5r00.bROlxgLe.GhZ2qNimI/x8NhQy14cIFK', 'uki@gmail.com', 4, 1, '2022-10-24 03:05:55', '2022-10-24 03:05:55'),
+(28, '12345674', 'Arief Nursoleh', '$2y$10$SI1TBY4Q52CZX5Uz1OxYzuKJkeQl7ZEkSw0tFTA.clo7ZOURjj0Ci', 'arief@gmail.com', 4, 1, '2022-10-24 03:15:00', '2022-10-24 03:15:00');
 
 -- --------------------------------------------------------
 
@@ -8799,7 +8835,33 @@ INSERT INTO `u_user_logaktivitas` (`id`, `user_id`, `datetime`, `keterangan`) VA
 (114, 1, '2022-10-18 21:10:46', 'login'),
 (115, 12, '2022-10-20 23:37:48', 'login'),
 (116, 24, '2022-10-23 16:39:50', 'login'),
-(117, 10, '2022-10-23 16:54:10', 'login');
+(117, 10, '2022-10-23 16:54:10', 'login'),
+(118, 24, '2022-10-24 00:23:09', 'login'),
+(119, 24, '2022-10-24 00:29:02', 'login'),
+(120, 1, '2022-10-24 00:29:13', 'login'),
+(121, 10, '2022-10-24 00:30:30', 'login'),
+(122, 1, '2022-10-24 00:32:02', 'login'),
+(123, 26, '2022-10-24 01:51:10', 'login'),
+(124, 10, '2022-10-24 02:00:58', 'login'),
+(125, 1, '2022-10-24 03:02:23', 'login'),
+(126, 27, '2022-10-24 03:11:15', 'login'),
+(127, 27, '2022-10-24 03:35:01', 'berhasil update biodata'),
+(128, 1, '2022-10-24 20:41:40', 'login'),
+(129, 24, '2022-10-24 22:22:13', 'login'),
+(130, 24, '2022-10-24 22:23:37', 'berhasil update biodata'),
+(131, 10, '2022-10-24 22:43:04', 'login'),
+(132, 1, '2022-10-24 23:42:17', 'login'),
+(133, 24, '2022-10-24 23:43:33', 'login'),
+(134, 24, '2022-10-25 02:56:10', 'login'),
+(135, 7, '2022-10-25 03:03:59', 'login'),
+(136, 26, '2022-10-25 04:01:26', 'login'),
+(137, 24, '2022-10-25 04:05:23', 'login'),
+(138, 24, '2022-10-25 04:24:28', 'login'),
+(139, 26, '2022-10-25 04:44:03', 'login'),
+(140, 24, '2022-10-27 21:25:12', 'login'),
+(141, 26, '2022-10-27 21:41:29', 'login'),
+(142, 1, '2022-10-30 02:52:34', 'login'),
+(143, 10, '2022-10-30 02:55:04', 'login');
 
 --
 -- Indexes for dumped tables
@@ -8831,6 +8893,15 @@ ALTER TABLE `b_nilai`
   ADD KEY `kd_mapel` (`kd_mapel`),
   ADD KEY `b_nilai_ibfk_1` (`nis`),
   ADD KEY `kd_semester` (`kd_semester`);
+
+--
+-- Indexes for table `b_nilai_tugas`
+--
+ALTER TABLE `b_nilai_tugas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nis` (`nis`,`kd_mapel`,`kd_semester`),
+  ADD KEY `kd_semester` (`kd_semester`),
+  ADD KEY `kd_mapel` (`kd_mapel`);
 
 --
 -- Indexes for table `b_orangtua`
@@ -9015,6 +9086,12 @@ ALTER TABLE `b_nilai`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `b_nilai_tugas`
+--
+ALTER TABLE `b_nilai_tugas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `b_orangtua`
 --
 ALTER TABLE `b_orangtua`
@@ -9036,7 +9113,7 @@ ALTER TABLE `b_tagihan`
 -- AUTO_INCREMENT for table `c_guru`
 --
 ALTER TABLE `c_guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `l_agama`
@@ -9120,13 +9197,13 @@ ALTER TABLE `u_role`
 -- AUTO_INCREMENT for table `u_user`
 --
 ALTER TABLE `u_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `u_user_logaktivitas`
 --
 ALTER TABLE `u_user_logaktivitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- Constraints for dumped tables
@@ -9139,6 +9216,14 @@ ALTER TABLE `b_nilai`
   ADD CONSTRAINT `b_nilai_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `b_siswa` (`nis`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `b_nilai_ibfk_2` FOREIGN KEY (`kd_mapel`) REFERENCES `b_mapel` (`kd_mapel`) ON UPDATE CASCADE,
   ADD CONSTRAINT `b_nilai_ibfk_3` FOREIGN KEY (`kd_semester`) REFERENCES `b_semester` (`kd_semester`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `b_nilai_tugas`
+--
+ALTER TABLE `b_nilai_tugas`
+  ADD CONSTRAINT `b_nilai_tugas_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `b_siswa` (`nis`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `b_nilai_tugas_ibfk_3` FOREIGN KEY (`kd_semester`) REFERENCES `b_semester` (`kd_semester`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `b_nilai_tugas_ibfk_4` FOREIGN KEY (`kd_mapel`) REFERENCES `b_mapel` (`kd_mapel`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `b_orangtua`

@@ -74,10 +74,17 @@
                 <li><a class="nav-link" href="<?= base_url('dashboard/index'); ?>"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
                 <li class="menu-header">Guru</li>
                 <li><a class="nav-link" href="<?= base_url('gurulog/profil'); ?>"><i class="fas fa-user-graduate"></i> <span>Profil Guru</span></a></li>
-                <li><a class="nav-link" href="<?= base_url('siswalog/biodata'); ?>"><i class="fas fa-receipt"></i> <span>Biodata</span></a></li>
-                <!-- <li><a class="nav-link" href="<?= base_url('siswalog/orangtua'); ?>"><i class="fas fa-receipt"></i> <span>Data Orang Tua</span></a></li>
-                <li><a class="nav-link" href="<?= base_url('siswalog/transkripnilai'); ?>"><i class="fas fa-list"></i> <span>Transkrip Nilai</span></a></li>
-                 -->
+                <li><a class="nav-link" href="<?= base_url('gurulog/biodata'); ?>"><i class="fas fa-receipt"></i> <span>Biodata</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Nilai Siswa</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="<?= base_url('gurulog/nilai_tugas'); ?>" target="_blank">Nilai Tugas</a></li>
+                        <li><a class="nav-link" href="<?= base_url('gurulog/nilai_uts'); ?>" target="_blank">Nilai UTS</a></li>
+                        <li><a class="nav-link" href="<?= base_url('gurulog/nilai_uas'); ?>" target="_blank">Nilai UAS</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a class="nav-link" href="<?= base_url('siswalog/transkripnilai'); ?>"><i class="fas fa-list"></i> <span>Transkrip Nilai</span></a></li> -->
+                
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Cetak</span></a>
                     <ul class="dropdown-menu">
